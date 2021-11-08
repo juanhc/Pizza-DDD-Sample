@@ -10,14 +10,14 @@ namespace CharlaDDD.Domain.Aggregates.PizzaOrder
         public int PizzaId { get; private set; }
         public PizzaDoughType DoughType { get; private set; }
         public string DoughTypeName { get; private set; }
-        public int Number { get; private set; }
+        public int NumberOfItems { get; private set; }
         public string Comments { get; private set; }
 
         public PizzaOrderItem(int pizzaId, int numberOfItems, int doughType, string comments)
         {
             PizzaId = pizzaId;
 
-            Number =
+            NumberOfItems =
                 numberOfItems > 0 && numberOfItems < 50
                 ? numberOfItems
                 : throw new PizzaOrderItemValidationException(nameof(numberOfItems), $"{nameof(numberOfItems)} must be between 1 and 49.");

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using System.Threading.Tasks;
 using CharlaDDD.Application.Commands;
 using MediatR;
@@ -12,12 +13,11 @@ namespace CharlaDDD.Controllers
     {
         private readonly IMediator _mediator;
 
-        public PizzaController(IMediator mediator)
-        {
-            _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
-        }
+        public PizzaController(IMediator mediator) 
+            => _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
 
         [HttpPost]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
         public async Task<ActionResult<CreatePizzaCommandResponse>> CreatePizza(CreatePizzaCommand order) => await _mediator.Send(order);
     }
 }

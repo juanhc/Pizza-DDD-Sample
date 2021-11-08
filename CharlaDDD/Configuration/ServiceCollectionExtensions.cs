@@ -2,6 +2,7 @@
 using CharlaDDD.Application.Commands;
 using CharlaDDD.Application.Queries;
 using CharlaDDD.Domain.Core;
+using CharlaDDD.Domain.DomainServices;
 using CharlaDDD.Infrastructure;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,6 +18,8 @@ namespace CharlaDDD.Configuration
             services.AddScoped(typeof(IPizzaOrdersQueries), typeof(PizzaOrdersQueries));
 
             services.AddScoped(typeof(IPizzaOrderMapper), typeof(PizzaOrderMapper));
+
+            services.AddScoped(typeof(PizzaOrderDomainService));
 
             services.AddMediatR(typeof(CreatePizzaOrderCommandHandler).Assembly);
 

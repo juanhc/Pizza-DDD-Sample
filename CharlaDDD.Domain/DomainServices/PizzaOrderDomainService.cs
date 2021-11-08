@@ -9,25 +9,25 @@ namespace CharlaDDD.Domain.DomainServices
 {
     public class PizzaOrderDomainService
     {
-        private readonly IRepository<Pizza> pizzaRepository;
+        private readonly IRepository<Pizza> _pizzaRepository;
 
         public PizzaOrderDomainService(IRepository<Pizza> pizzaRepository)
-            => pizzaRepository = this.pizzaRepository ?? throw new ArgumentNullException(nameof(pizzaRepository));
+            => _pizzaRepository = pizzaRepository ?? throw new ArgumentNullException(nameof(pizzaRepository));
 
-        public async Task<double> GetTotalOfOrder(PizzaOrder order)
+        public async Task UpdateTotalOfOrder(PizzaOrder order)
         {
-            double result = default(double);
+            double result = default;
 
             foreach (var item in order.Items)
             {
-                var pizza = await pizzaRepository.GetByIdAsync(item.PizzaId);
+                var pizza = await _pizzaRepository.GetByIdAsync(item.PizzaId);
 
                 var price = pizza.GetPrice(item.DoughType);
 
-                result += price;
+                result += price * item.NumberOfItems;
             }
 
-            return result;
+            order.UpdateTotal(result);
         }
     }
 }

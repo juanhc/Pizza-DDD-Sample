@@ -13,15 +13,10 @@ namespace CharlaDDD.Application.Commands
             : IRequestHandler<CreatePizzaOrderCommand, CreatePizzaOrderCommandResponse>
     {
         private readonly IRepository<PizzaOrder> _pizzaOrderRepository;
-        private readonly ILogger<CreatePizzaOrderCommandHandler> _logger;
 
         public CreatePizzaOrderCommandHandler(
-            IRepository<PizzaOrder> pizzaOrderRepository,
-            ILogger<CreatePizzaOrderCommandHandler> logger)
-        {
-            _pizzaOrderRepository = pizzaOrderRepository ?? throw new ArgumentNullException(nameof(pizzaOrderRepository));
-            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-        }
+            IRepository<PizzaOrder> pizzaOrderRepository)
+            => _pizzaOrderRepository = pizzaOrderRepository ?? throw new ArgumentNullException(nameof(pizzaOrderRepository));
 
         public async Task<CreatePizzaOrderCommandResponse> Handle(CreatePizzaOrderCommand message, CancellationToken cancellationToken)
         {

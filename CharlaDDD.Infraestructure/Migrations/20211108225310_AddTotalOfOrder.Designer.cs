@@ -4,14 +4,16 @@ using CharlaDDD.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CharlaDDD.Infrastructure.Migrations
 {
     [DbContext(typeof(PizzaOrdersDbContext))]
-    partial class PizzaOrdersDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211108225310_AddTotalOfOrder")]
+    partial class AddTotalOfOrder
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -93,7 +95,7 @@ namespace CharlaDDD.Infrastructure.Migrations
                     b.Property<string>("DoughTypeName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("NumberOfItems")
+                    b.Property<int>("Number")
                         .HasColumnType("int");
 
                     b.Property<int>("PizzaId")

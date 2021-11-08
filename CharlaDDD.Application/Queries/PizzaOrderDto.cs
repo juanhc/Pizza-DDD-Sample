@@ -5,10 +5,12 @@ namespace CharlaDDD.Application.Queries
 {
     public class PizzaOrderDto
     {
+        public int OrderId { get; set; }
         public DateTime CreatedAt { get; set; }
         public string Receiver_Name { get; set; }
         public string Receiver_LastName { get; set; }
         public string Receiver_PhoneNumber { get; set; }
+        public double Total { get; set; }
         public ICollection<PizzaOrderItemDto> Items { get; set; }
         public PizzaOrderDto() => Items = new List<PizzaOrderItemDto>();
     }

@@ -13,6 +13,7 @@ namespace CharlaDDD.Domain.Aggregates.PizzaOrder
         private readonly List<PizzaOrderItem> _items;
         public IReadOnlyCollection<PizzaOrderItem> Items => _items;
         public Receiver Receiver { get; private set; }
+        public double Total { get; private set; }
 
         public PizzaOrder()
         {
@@ -35,5 +36,7 @@ namespace CharlaDDD.Domain.Aggregates.PizzaOrder
 
             _items.Remove(item);
         }
+
+        public void UpdateTotal(double total) => Total = total;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using CharlaDDD.Domain.Aggregates.Pizza;
 using CharlaDDD.Domain.Aggregates.PizzaOrder;
 using CharlaDDD.Domain.Core;
+using CharlaDDD.Domain.DomainServices;
 using MediatR;
 using System;
 using System.Threading;
@@ -13,13 +14,16 @@ namespace CharlaDDD.Application.Commands
     {
         private readonly IRepository<PizzaOrder> _pizzaOrderRepository;
         private readonly IRepository<Pizza> _pizzaRepository;
+        private readonly PizzaOrderDomainService _domainService;
 
         public AddOrderItemCommandHandler(
             IRepository<PizzaOrder> pizzaOrderRepository,
-            IRepository<Pizza> pizzaRepository)
+            IRepository<Pizza> pizzaRepository,
+            PizzaOrderDomainService domainService)
         {
             _pizzaOrderRepository = pizzaOrderRepository ?? throw new ArgumentNullException(nameof(pizzaOrderRepository));
             _pizzaRepository = pizzaRepository ?? throw new ArgumentNullException(nameof(pizzaRepository));
+            _domainService = domainService ?? throw new ArgumentNullException(nameof(domainService));
         }
 
         public async Task<AddOrderItemCommandResponse> Handle(AddOrderItemCommand message, CancellationToken cancellationToken)
@@ -34,6 +38,7 @@ namespace CharlaDDD.Application.Commands
                 throw new Exception("Incorrect pizza Id.");
 
             order.AddItem(message.PizzaId, message.NumberOfItems, message.DoughType, message.Comments);
+            await _domainService.UpdateTotalOfOrder(order);
 
             await _pizzaOrderRepository.SaveChangesAsync();
 
