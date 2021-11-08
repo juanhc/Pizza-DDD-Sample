@@ -1,0 +1,5 @@
+C:\Users\jhenares\source\repos\CharlaDDD\CharlaDDD.Application\bin\Debug\netstandard2.0\CharlaDDD.Application.deps.json
+C:\Users\jhenares\source\repos\CharlaDDD\CharlaDDD.Application\bin\Debug\netstandard2.0\CharlaDDD.Application.dll
+C:\Users\jhenares\source\repos\CharlaDDD\CharlaDDD.Application\obj\Debug\netstandard2.0\CharlaDDD.Application.csprojAssemblyReference.cache
+C:\Users\jhenares\source\repos\CharlaDDD\CharlaDDD.Application\obj\Debug\netstandard2.0\CharlaDDD.Application.AssemblyInfoInputs.cache
+C:\Users\jhenares\source\repos\CharlaDDD\CharlaDDD.Application\obj\Debug\netstandard2.0\CharlaDDD.Application.AssemblyInfo.cs
