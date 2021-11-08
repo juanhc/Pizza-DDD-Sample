@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using System;
+using System.Collections.Generic;
 
 namespace CharlaDDD.Application.Commands
 {
@@ -9,6 +10,7 @@ namespace CharlaDDD.Application.Commands
         public DateTime GetDate() => Date;
         public string Name { get; set; }
         public double BasePrice { get; set; }
+        public IEnumerable<string> Ingredients { get; set; }
 
         public CreatePizzaCommand() => Date = DateTime.UtcNow;
     }

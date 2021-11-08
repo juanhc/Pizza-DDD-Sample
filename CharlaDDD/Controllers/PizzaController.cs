@@ -19,5 +19,9 @@ namespace CharlaDDD.Controllers
         [HttpPost]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         public async Task<ActionResult<CreatePizzaCommandResponse>> CreatePizza(CreatePizzaCommand order) => await _mediator.Send(order);
+
+        [HttpDelete]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        public async Task<ActionResult<DeletePizzaCommandResponse>> DeletePizza(int pizzaId) => await _mediator.Send(new DeletePizzaCommand(pizzaId));
     }
 }

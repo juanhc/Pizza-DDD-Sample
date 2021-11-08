@@ -1,8 +1,5 @@
-using CharlaDDD.Application.Behaviors;
-using CharlaDDD.Application.Commands;
 using CharlaDDD.Configuration;
 using CharlaDDD.Infrastructure;
-using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;

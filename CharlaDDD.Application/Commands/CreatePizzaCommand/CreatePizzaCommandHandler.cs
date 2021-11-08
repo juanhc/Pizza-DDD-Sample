@@ -1,7 +1,6 @@
 ﻿using CharlaDDD.Domain.Aggregates.Pizza;
 using CharlaDDD.Domain.Core;
 using MediatR;
-using Microsoft.Extensions.Logging;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
@@ -20,9 +19,9 @@ namespace CharlaDDD.Application.Commands
         public async Task<CreatePizzaCommandResponse> Handle(CreatePizzaCommand message, CancellationToken cancellationToken)
         {
             var pizza = new Pizza(message.Name, message.BasePrice);
+            pizza.AddIngredientList(message.Ingredients);
 
             await _pizzaRepository.AddAsync(pizza);
-
             await _pizzaRepository.SaveChangesAsync();
 
             return new CreatePizzaCommandResponse

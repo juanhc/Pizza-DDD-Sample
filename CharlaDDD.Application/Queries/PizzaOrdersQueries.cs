@@ -29,7 +29,7 @@ namespace CharlaDDD.Application.Queries
 
                 command.CommandText = @"
                 select o.Id as OrderId, o.CreatedAt, o.Total, o.Receiver_Name, o.Receiver_LastName, o.Receiver_PhoneNumber, 
-                p.Name as PizzaName, i.DoughType, i.DoughTypeName, i.Number as NumberOfItems, i.Comments
+                p.Name as PizzaName, i.DoughType, i.DoughTypeName, i.NumberOfItems, i.Comments
                 from PizzaOrders as o
                 left join PizzaOrderItem as i
                 on o.Id = i.PizzaOrderId
@@ -53,8 +53,8 @@ namespace CharlaDDD.Application.Queries
                     await connection.OpenAsync();
 
                 command.CommandText = @"
-                select o.Id as OrderId, o.CreatedAt, o.Total o.Receiver_Name, o.Receiver_LastName, o.Receiver_PhoneNumber, 
-                p.Name as PizzaName, i.DoughType, i.DoughTypeName, i.Number as NumberOfItems, i.Comments
+                select o.Id as OrderId, o.CreatedAt, o.Total, o.Receiver_Name, o.Receiver_LastName, o.Receiver_PhoneNumber, 
+                p.Name as PizzaName, i.DoughType, i.DoughTypeName, i.NumberOfItems, i.Comments
                 from PizzaOrders as o
                 left join PizzaOrderItem as i
                 on o.Id = i.PizzaOrderId

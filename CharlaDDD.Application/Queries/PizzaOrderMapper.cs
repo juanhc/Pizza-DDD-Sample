@@ -1,5 +1,4 @@
 ﻿using CharlaDDD.Application.Core;
-using System;
 using System.Collections.Generic;
 using System.Data;
 

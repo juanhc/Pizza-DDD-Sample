@@ -1,5 +1,4 @@
-﻿using CharlaDDD.Domain.Enums;
-using CharlaDDD.Domain.Exceptions;
+﻿using CharlaDDD.Domain.Exceptions;
 using CharlaDDD.Domain.Core;
 using System;
 using System.Collections.Generic;

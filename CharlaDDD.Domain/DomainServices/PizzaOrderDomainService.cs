@@ -2,7 +2,6 @@
 using CharlaDDD.Domain.Aggregates.PizzaOrder;
 using CharlaDDD.Domain.Core;
 using System;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace CharlaDDD.Domain.DomainServices

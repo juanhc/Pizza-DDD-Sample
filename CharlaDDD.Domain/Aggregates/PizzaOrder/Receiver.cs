@@ -1,8 +1,6 @@
 ﻿using CharlaDDD.Domain.Exceptions;
 using CharlaDDD.Domain.Core;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace CharlaDDD.Domain.Aggregates.PizzaOrder
 {

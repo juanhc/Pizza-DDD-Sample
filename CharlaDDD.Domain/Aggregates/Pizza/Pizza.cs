@@ -29,6 +29,13 @@ namespace CharlaDDD.Domain.Aggregates.Pizza
         private Pizza() { }
 
         public void AddIngredient(string ingredientName) => _ingredients.Add(new PizzaIngredient(ingredientName));
+        public void AddIngredientList(IEnumerable<string> ingredientNames)
+        {
+            foreach(var ingredientName in ingredientNames)
+            {
+                _ingredients.Add(new PizzaIngredient(ingredientName));
+            }
+        } 
 
         public double GetPrice(PizzaDoughType pizzaDoughType) =>
             pizzaDoughType switch

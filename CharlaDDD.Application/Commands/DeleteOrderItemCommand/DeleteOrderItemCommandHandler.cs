@@ -1,5 +1,4 @@
 ﻿using CharlaDDD.Application.Commands;
-using CharlaDDD.Domain.Aggregates.Pizza;
 using CharlaDDD.Domain.Aggregates.PizzaOrder;
 using CharlaDDD.Domain.Core;
 using CharlaDDD.Domain.DomainServices;

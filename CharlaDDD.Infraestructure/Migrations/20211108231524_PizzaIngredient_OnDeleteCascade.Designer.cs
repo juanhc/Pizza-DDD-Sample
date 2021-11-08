@@ -4,14 +4,16 @@ using CharlaDDD.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CharlaDDD.Infrastructure.Migrations
 {
     [DbContext(typeof(PizzaOrdersDbContext))]
-    partial class PizzaOrdersDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211108231524_PizzaIngredient_OnDeleteCascade")]
+    partial class PizzaIngredient_OnDeleteCascade
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

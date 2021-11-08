@@ -1,9 +1,6 @@
 ﻿using CharlaDDD.Domain.Aggregates.Pizza;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CharlaDDD.Infrastructure.EntityTypeConfiguration
 {
@@ -15,6 +12,11 @@ namespace CharlaDDD.Infrastructure.EntityTypeConfiguration
             builder
                 .Property<double>("_basePrice")
                 .HasColumnName("BasePrice");
+
+            builder
+                .HasMany(p => p.Ingredients)
+                .WithOne()
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

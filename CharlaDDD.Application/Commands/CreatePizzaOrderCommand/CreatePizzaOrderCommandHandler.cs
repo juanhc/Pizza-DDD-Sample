@@ -1,8 +1,6 @@
 ﻿using CharlaDDD.Domain.Aggregates.PizzaOrder;
-using CharlaDDD.Domain.Enums;
 using CharlaDDD.Domain.Core;
 using MediatR;
-using Microsoft.Extensions.Logging;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
