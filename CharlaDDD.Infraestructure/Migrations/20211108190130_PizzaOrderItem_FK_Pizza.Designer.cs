@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CharlaDDD.Infrastructure.Migrations
 {
-    [DbContext(typeof(PizzaOrdersDbContext))]
+    [DbContext(typeof(PizzaApplicationDbContext))]
     [Migration("20211108190130_PizzaOrderItem_FK_Pizza")]
     partial class PizzaOrderItem_FK_Pizza
     {

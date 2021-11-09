@@ -6,7 +6,7 @@ namespace CharlaDDD.Domain.Core
 {
     public interface IRepository<T> where T : Entity, IAggregateRoot
     {
-        IQueryable<T> GetAll();
+        IQueryable<T> GetQueryable();
         Task<T> GetByIdAsync(int id);
         Task<T> AddAsync(T entity);
         T Update(T entity);

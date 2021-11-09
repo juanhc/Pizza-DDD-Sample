@@ -17,6 +17,7 @@ namespace CharlaDDD.Application.Queries
 
     public class PizzaOrderItemDto
     {
+        public int OrderItemId { get; set; }
         public string PizzaName { get; set; }
         public string DoughTypeName { get; set; }
         public int NumberOfItems { get; set; }

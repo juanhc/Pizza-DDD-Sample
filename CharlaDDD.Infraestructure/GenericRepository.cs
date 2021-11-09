@@ -8,9 +8,9 @@ namespace CharlaDDD.Infrastructure
 {
     public class GenericRepository<T> : IRepository<T> where T : Entity, IAggregateRoot
     {
-        private readonly PizzaOrdersDbContext _context;
+        private readonly PizzaApplicationDbContext _context;
 
-        public GenericRepository(PizzaOrdersDbContext context) => _context = context ?? throw new ArgumentNullException(nameof(context));
+        public GenericRepository(PizzaApplicationDbContext context) => _context = context ?? throw new ArgumentNullException(nameof(context));
 
         public async Task<T> AddAsync(T entity)
         {
@@ -33,7 +33,7 @@ namespace CharlaDDD.Infrastructure
             return entity;
         }
 
-        public IQueryable<T> GetAll() => _context.Set<T>().AsQueryable();
+        public IQueryable<T> GetQueryable() => _context.Set<T>().AsQueryable();
 
         public async Task<T> GetByIdAsync(int id) => await _context.FindAsync<T>(id);
 

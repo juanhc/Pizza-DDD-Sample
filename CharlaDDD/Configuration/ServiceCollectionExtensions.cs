@@ -5,6 +5,7 @@ using CharlaDDD.Domain.Core;
 using CharlaDDD.Domain.DomainServices;
 using CharlaDDD.Infrastructure;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace CharlaDDD.Configuration
@@ -15,12 +16,33 @@ namespace CharlaDDD.Configuration
         {
             services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
 
-            services.AddScoped(typeof(IPizzaOrdersQueries), typeof(PizzaOrdersQueries));
+            services.AddScoped(typeof(IPizzaApplicationQueries), typeof(PizzaApplicationQueries));
 
-            services.AddScoped(typeof(IPizzaOrderMapper), typeof(PizzaOrderMapper));
+            services.AddScoped(typeof(IPizzaApplicationMapper), typeof(PizzaApplicationMapper));
 
             services.AddScoped(typeof(PizzaOrderDomainService));
 
+            return services;
+        }
+
+        public static IServiceCollection ConfigureDataBase(this IServiceCollection services)
+        {
+            var serviceProvider = services.BuildServiceProvider();
+
+            using (var serviceScope = serviceProvider.CreateScope())
+            {
+                var context = serviceScope.ServiceProvider.GetRequiredService<PizzaApplicationDbContext>();
+
+                context.Database.Migrate();
+
+                context.SeedData();
+            }
+
+            return services;
+        }
+
+        public static IServiceCollection ConfigureMediatR(this IServiceCollection services)
+        {
             services.AddMediatR(typeof(CreatePizzaOrderCommandHandler).Assembly);
 
             services.AddScoped(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));

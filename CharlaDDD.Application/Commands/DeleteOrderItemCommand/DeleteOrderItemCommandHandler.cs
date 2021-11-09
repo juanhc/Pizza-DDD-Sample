@@ -3,6 +3,7 @@ using CharlaDDD.Domain.Aggregates.PizzaOrder;
 using CharlaDDD.Domain.Core;
 using CharlaDDD.Domain.DomainServices;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
@@ -25,7 +26,10 @@ namespace CharlDeleteD.Application.Commands
 
         public async Task<DeleteOrderItemCommandResponse> Handle(DeleteOrderItemCommand message, CancellationToken cancellationToken)
         {
-            var order = await _pizzaOrderRepository.GetByIdAsync(message.PizzaOrderId);
+            var order = await _pizzaOrderRepository
+                .GetQueryable()
+                .Include(x => x.Items)
+                .FirstOrDefaultAsync(x => x.Id == message.PizzaOrderId);
 
             if (order == null)
                 throw new Exception("Incorrect order Id.");

@@ -18,6 +18,7 @@ namespace CharlaDDD.Application.Commands
     public class AddOrderItemCommandResponse
     {
         public int PizzaOrderId { get; set; }
+        public int PizzaOrderItemId { get; set; }
         public int PizzaId { get; set; }
         public string PizzaName { get; set; }
         public int DoughType { get; set; }

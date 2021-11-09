@@ -23,13 +23,14 @@ namespace CharlaDDD
         {
             services.AddControllers();
 
-            services.AddDbContext<PizzaOrdersDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("PizzaOrders")));
+            services.AddDbContext<PizzaApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("PizzaOrders")));
 
             services.AddSwaggerDocument();
 
-            
-
-            services.ConfigureApplication();
+            services
+                .ConfigureApplication()
+                .ConfigureDataBase()
+                .ConfigureMediatR();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

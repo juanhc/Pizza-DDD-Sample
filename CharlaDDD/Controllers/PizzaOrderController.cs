@@ -14,9 +14,10 @@ namespace CharlaDDD.Controllers
     public class PizzaOrderController : ControllerBase
     {
         private readonly IMediator _mediator;
-        private readonly IPizzaOrdersQueries _queries;
+        private readonly IPizzaApplicationQueries _queries;
 
-        public PizzaOrderController(IMediator mediator, IPizzaOrdersQueries queries)
+        public PizzaOrderController(IMediator mediator, 
+            IPizzaApplicationQueries queries)
         {
             _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
             _queries = queries ?? throw new ArgumentNullException(nameof(queries));

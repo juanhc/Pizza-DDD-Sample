@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CharlaDDD.Infrastructure.Migrations
 {
-    [DbContext(typeof(PizzaOrdersDbContext))]
+    [DbContext(typeof(PizzaApplicationDbContext))]
     partial class PizzaOrdersDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
