@@ -1,9 +1,0 @@
-C:\Users\jhenares\source\repos\CharlaDDD\CharlaDDD.Domain\bin\Debug\netstandard2.1\CharlaDDD.Domain.deps.json
-C:\Users\jhenares\source\repos\CharlaDDD\CharlaDDD.Domain\bin\Debug\netstandard2.1\CharlaDDD.Domain.dll
-C:\Users\jhenares\source\repos\CharlaDDD\CharlaDDD.Domain\bin\Debug\netstandard2.1\CharlaDDD.Domain.pdb
-C:\Users\jhenares\source\repos\CharlaDDD\CharlaDDD.Domain\obj\Debug\netstandard2.1\CharlaDDD.Domain.AssemblyInfoInputs.cache
-C:\Users\jhenares\source\repos\CharlaDDD\CharlaDDD.Domain\obj\Debug\netstandard2.1\CharlaDDD.Domain.AssemblyInfo.cs
-C:\Users\jhenares\source\repos\CharlaDDD\CharlaDDD.Domain\obj\Debug\netstandard2.1\CharlaDDD.Domain.csproj.CoreCompileInputs.cache
-C:\Users\jhenares\source\repos\CharlaDDD\CharlaDDD.Domain\obj\Debug\netstandard2.1\CharlaDDD.Domain.dll
-C:\Users\jhenares\source\repos\CharlaDDD\CharlaDDD.Domain\obj\Debug\netstandard2.1\CharlaDDD.Domain.pdb
-C:\Users\jhenares\source\repos\CharlaDDD\CharlaDDD.Domain\obj\Debug\netstandard2.1\CharlaDDD.Domain.csprojAssemblyReference.cache
